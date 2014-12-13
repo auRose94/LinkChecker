@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkChecker", "LinkChecker\LinkChecker.csproj", "{23BAF9F6-8B7D-4EB6-B6C4-9710FC9E52FB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1AB834C4-5011-4BF6-B6E6-4807364ACBA1}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +18,8 @@ Global
 		{23BAF9F6-8B7D-4EB6-B6C4-9710FC9E52FB}.Debug|x86.Build.0 = Debug|x86
 		{23BAF9F6-8B7D-4EB6-B6C4-9710FC9E52FB}.Release|x86.ActiveCfg = Release|x86
 		{23BAF9F6-8B7D-4EB6-B6C4-9710FC9E52FB}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = LinkChecker\LinkChecker.csproj

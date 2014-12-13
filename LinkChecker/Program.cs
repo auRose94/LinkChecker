@@ -37,33 +37,32 @@ public class LinkChecker
 {
 	public WebClient Client = new WebClient();
 
+	public LinkChecker()
+	{
+		/*
+		Client.Headers.Add("Content-Type", "text/plain");
+		Client.Headers.Add("Accept-Language", "en;q=0.8");
+		Client.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36");
+		Client.Encoding = System.Text.Encoding.Unicode;
+		Client.Headers[HttpRequestHeader.Authorization] = string.Format("Basic {0}", CredentialCache.DefaultCredentials);
+		*/
+	}
+
 	void Method(object inurl)
 	{
 		var url = (string)inurl;
 
 		try {
-			string htmlCode = Client.DownloadString(url);
-			if (!string.IsNullOrWhiteSpace(htmlCode)) {
+			var data = Client.DownloadData(url);
+			if (data.Length > 0) {
 				Console.WriteLine("Good: " + url);
 			} else {
 				Console.WriteLine("Bad: " + url);
 			}
 		} catch (WebException exc) {
-			switch (exc.Status) {
-				case WebExceptionStatus.ProtocolError:
-				case WebExceptionStatus.SendFailure:
-					Console.WriteLine("Good: " + url);
-					break;
-				case WebExceptionStatus.NameResolutionFailure:
-				case WebExceptionStatus.ReceiveFailure:
-				case WebExceptionStatus.ConnectFailure:
-					Console.WriteLine("Bad: " + url);
-					break;
-				default:
-					Console.WriteLine(exc.Status + ": " + url);
-					break;
-			}
+			Console.WriteLine(exc.Status + ": " + url);
 		} 
+		Client.Dispose();
 	}
 
 	public void Exist(string url)
