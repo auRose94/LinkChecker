@@ -1,6 +1,8 @@
 LinkChecker
 ===========
 
+This is a project that I did for my mother a long time ago.
+
 Takes a txt file named "URLS.txt" and outputs a list of both good and bad links.
 Cavet: Doesn't handle paths. i.e. google.com/doesntwork or C:/Windows/
 
